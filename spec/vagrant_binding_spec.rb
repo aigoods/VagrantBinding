@@ -13,5 +13,14 @@ describe VagrantBinding do
 	  expect(server.options[:Host]).to eq("0.0.0.0")
 	end
   end
+
+  context "when in production or test modes" do
+
+  	it 'has not changed the default host' do
+  	  expect(Rails.env).to receive(:development?).and_return(false)
+	  expect(server.options[:Host]).to eq("localhost")
+	end
+  end
+
   
 end

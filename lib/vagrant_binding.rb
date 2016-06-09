@@ -4,7 +4,9 @@ require 'rails/commands/server'
 module Rails
   class Server
     def default_options
-    	super.merge(Host:  '0.0.0.0')
+      if Rails.env.development?
+      	super.merge(Host:  '0.0.0.0')
+      end || super
     end
   end
 end
