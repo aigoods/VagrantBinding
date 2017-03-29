@@ -1,3 +1,6 @@
 [submodule "bin"]
 	path = bin
 	url = https://github.com/aigoods/bin
+[submodule "lib"]
+	path = lib
+	url = https://github.com/aigoods/lib
